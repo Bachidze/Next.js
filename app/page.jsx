@@ -3,23 +3,27 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
+
 const Home = () => {
   const router = useRouter()
-
-  const navigate = (page) =>{
+  const navigate = (page) => {
     router.push(page)
   }
+
+
   return (
-    <section className="">
-      <h1>useRouter</h1>
-      <Link href={'/projects'}>Projects</Link><br />
-        <button onClick={()=>navigate('about')}>
-            GoTo About Page
-        </button> <br/>
-        <button onClick={()=>navigate('login')}>
-            GoTo Login Page
-        </button>
-    </section>
+   <section>
+    <Link className="m-4" href='/projects'>Projects</Link><br />
+    <button
+     className="border px-2 py-4 border-black m-4"
+      onClick={() => navigate('about')}>Go To About Page</button><br />
+    <button
+     className="border px-2 py-4 border-black m-4"
+     onClick={() => navigate('login')}>Go To Login Page</button><br />
+    <button
+     className="border px-2 py-4 border-black m-4"
+      onClick={() => navigate('projects')}>Go To Projects Page</button>
+   </section>
   )
 }
 
